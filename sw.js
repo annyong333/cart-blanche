@@ -1,5 +1,5 @@
 // Network-first: always fresh when online, still opens offline.
-const C = 'cb-shell-v1';
+const C = 'cb-shell-v2';
 const SHELL = ['./', './index.html', './app.js', './recipes.js', './firebase-config.js', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png'];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(C).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
